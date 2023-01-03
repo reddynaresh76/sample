@@ -24,8 +24,8 @@ stages:
     condition: succeeded()
     displayName: Build
     steps:
-      - script: 
-         whoami
+    - script: 
+       whoami
     - task: Docker@2
       displayName: Build an image
       inputs:

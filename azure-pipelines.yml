@@ -7,7 +7,7 @@ trigger:
 - main
 
 pool:
-  name: k3s
+  name: Default
 
 
 stages:

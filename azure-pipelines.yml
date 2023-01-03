@@ -18,7 +18,7 @@ stages:
     displayName: PullRepo
     steps:
       - script: 
-         git clone https://reddynaresh76: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@github.com/reddynaresh76/sample.git /home/ubuntu/git/sample1
+         git clone https://reddynaresh76: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@github.com/reddynaresh76/sample.git /home/ubuntu/git/sample2
   - job: Build
     dependsOn: checkout
     condition: succeeded()

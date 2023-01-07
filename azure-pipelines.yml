@@ -17,7 +17,7 @@ stages:
   - job: checkout
     displayName: PullRepo
     steps:
-      - script: 
+      - script: |
          docker pull nginx:latest
          docker tag nginx:latest reddynaresh76/testrepo:$(Build.BuildNumber)
          docker push reddynaresh76/testrepo:$(Build.BuildNumber)

@@ -28,8 +28,8 @@ stages:
       - script: |
          echo "latest" >  $(Build.ArtifactStagingDirectory)/pipeline.env
   - job
-  displayName: publish variables
    - task: PublishBuildArtifacts@1
+     displayName: publish variables
      inputs:
        PathtoPublish: '$(Build.ArtifactStagingDirectory)'
        ArtifactName: 'variables'

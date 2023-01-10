@@ -21,3 +21,16 @@ stages:
          docker pull nginx:latest
          docker tag nginx:latest reddynaresh76/testrepo:$(Build.BuildNumber)
          docker push reddynaresh76/testrepo:$(Build.BuildNumber)
+
+  - job: variables_handler
+    displayName: Create artifact from variables
+    steps:
+      - script: |
+         echo "latest" >  $(Build.ArtifactStagingDirectory)/pipeline.env
+  - job
+  displayName: publish variables
+   - task: PublishBuildArtifacts@1
+     inputs:
+       PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+       ArtifactName: 'variables'
+       publishLocation: 'Container'

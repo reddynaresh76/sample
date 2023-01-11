@@ -27,8 +27,8 @@ stages:
     steps:
       - script: |
          echo "latest" >  $(Build.ArtifactStagingDirectory)/pipeline.env
-  - task: PublishBuildArtifacts@1
-    inputs:
-      PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-      ArtifactName: 'variables'
-      publishLocation: 'Container'
+      - task: PublishBuildArtifacts@1
+        inputs:
+          PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+          ArtifactName: 'drop'
+          publishLocation: 'Container'

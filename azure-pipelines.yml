@@ -26,7 +26,7 @@ stages:
     displayName: Create artifact from variables
     steps:
       - script: |
-         echo "latest" >  $(Build.ArtifactStagingDirectory)/pipeline.env
+         echo "latest_1" >  $(Build.ArtifactStagingDirectory)/pipeline.env
       - task: PublishBuildArtifacts@1
         inputs:
           PathtoPublish: '$(Build.ArtifactStagingDirectory)'

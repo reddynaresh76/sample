@@ -29,9 +29,7 @@ stages:
     - task: DownloadBuildArtifacts@0
       displayName: 'Download Build Artifacts'
       inputs:
-        buildType: 'specific'
-        project: 'naresherlaplli'
-        definition: $(Build.DefinitionName)
+        buildType: 'latest'
         preferTriggeringPipeline: true
         artifactName: drop
         downloadPath: '$(System.ArtifactsDirectory)/$(Build.BuildNumber)/'

@@ -29,24 +29,21 @@ stages:
     - task: DownloadBuildArtifacts@0
       displayName: 'Download Build Artifacts'
       inputs:
-      buildType: 'specific'
-      project: 'naresherlaplli'
-      definition: $(Build.DefinitionName)
-      preferTriggeringPipeline: true
-      artifactName: drop
-      downloadPath: '$(System.ArtifactsDirectory)/$(Build.BuildNumber)/'
-      extractTars: false
+        buildType: 'specific'
+        project: 'naresherlaplli'
+        definition: $(Build.DefinitionName)
+        preferTriggeringPipeline: true
+        artifactName: drop
+        downloadPath: '$(System.ArtifactsDirectory)/$(Build.BuildNumber)/'
+        extractTars: false
 
     - task: OneLuckiDev.json2variable.vsts-json-to-variable.oneLuckiDevJson2Variable@1
       displayName: 'JSON to Variable'
       inputs:
-      jsonFile: '$(System.ArtifactsDirectory)/$(Build.BuildNumber)/drop/pipeline.json'
-      variablePrefix: '$(Build.DefinitionName)'
-    
-    #Your build pipeline references an undefined variable named ‘json.test’. Create or edit the build pipeline for this YAML file, define the variable on the Variables tab. See https://go.microsoft.com/fwlink/?linkid=865972
+        jsonFile: '$(System.ArtifactsDirectory)/$(Build.BuildNumber)/drop/pipeline.json'
+        variablePrefix: '$(Build.DefinitionName)'
 
-    steps:
-    displayName: 'Command Line Script'
+  
     - script: |
       
       echo $(Build.BuildNumber)

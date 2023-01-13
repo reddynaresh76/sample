@@ -45,10 +45,5 @@ stages:
 
   
     - script: |
-      
       echo $(Build.BuildNumber)
-   
-      echo "test"
-   
-      echo $($(Build.DefinitionName).test)
       kubectl set image deployment/nginx-deployment nginx=reddynaresh76/testrepo:$(Build.BuildNumber) 

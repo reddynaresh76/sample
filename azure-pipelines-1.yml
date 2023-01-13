@@ -45,4 +45,4 @@ stages:
 
   
     - script: |
-      kubectl set image deployment/nginx-deployment nginx=reddynaresh76/testrepo:$(Build.BuildNumber) 
+       echo "test"
